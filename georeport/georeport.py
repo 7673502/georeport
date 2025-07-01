@@ -3,8 +3,15 @@ import requests
 import xmltodict
 from typing import List, Dict
 
+
 class GeoReport:
-    def __init__(self, root_address: str, jurisdiction: str = None, api_key: str = None, output_format: str = 'json') -> None:
+    def __init__(
+        self,
+        root_address: str,
+        jurisdiction: str = None,
+        api_key: str = None,
+        output_format: str = 'json'
+    ) -> None:
         self.root_address = root_address.rstrip('/')
         self.jurisdiction = jurisdiction
         self.api_key = api_key or os.getenv('GEOREPORT_API_KEY')
@@ -15,7 +22,10 @@ class GeoReport:
         if self.jurisdiction:
             params['jurisdiction_id'] = self.jurisdiction
 
-        response = requests.get(f'{self.root_address}/services.{self.output_format}', params=params)
+        response = requests.get(
+            f'{self.root_address}/services.{self.output_format}',
+            params=params
+        )
         response.raise_for_status()
 
         if self.output_format == 'json':
@@ -27,16 +37,26 @@ class GeoReport:
         params = {}
         if self.jurisdiction:
             params['jurisdiction_id'] = self.jurisdiction
-        
-        response = requests.get(f'{self.root_address}/services/{service_code}.{self.output_format}', params=params)
+
+        response = requests.get(
+            f'{self.root_address}/services/{service_code}.'
+            f'{self.output_format}',
+            params=params
+        )
         response.raise_for_status()
 
         if self.output_format == 'json':
             return response.json()
         else:
             return xmltodict.parse(response.content)['service_definition']
-    
-    def get_service_requests(self, service_request_id: str = None, start_date: str = None, end_date: str = None, status: str = None) -> List[Dict]:
+
+    def get_service_requests(
+        self,
+        service_request_id: str = None,
+        start_date: str = None,
+        end_date: str = None,
+        status: str = None
+    ) -> List[Dict]:
         params = {}
         if service_request_id:
             params['service_request_id'] = service_request_id
@@ -49,23 +69,35 @@ class GeoReport:
         if self.jurisdiction:
             params['jurisdiction_id'] = self.jurisdiction
 
-        response = requests.get(f'{self.root_address}/requests.{self.output_format}', params=params)
+        response = requests.get(
+            f'{self.root_address}/requests.{self.output_format}',
+            params=params
+        )
         response.raise_for_status()
 
         if self.output_format == 'json':
             return response.json()
         else:
-            return xmltodict.parse(response.content)['service_requests']['request']
-    
-    def get_service_request(self, service_request_id: str) -> Dict:
+            data = xmltodict.parse(response.content)
+            return data['service_requests']['request']
+
+    def get_service_request(
+        self,
+        service_request_id: str
+    ) -> Dict:
         params = {}
         if self.jurisdiction:
             params['jurisdiction_id'] = self.jurisdiction
 
-        response = requests.get(f'{self.root_address}/requests/{service_request_id}.{self.output_format}', params=params)
+        response = requests.get(
+            f'{self.root_address}/requests/{service_request_id}.'
+            f'{self.output_format}',
+            params=params
+        )
         response.raise_for_status()
 
         if self.output_format == 'json':
             return response.json()[0]
         else:
-            return xmltodict.parse(response.content)['service_requests']['request']
+            data = xmltodict.parse(response.content)
+            return data['service_requests']['request']
