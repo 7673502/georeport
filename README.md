@@ -16,12 +16,12 @@ client = GeoReport.from_city('Brookline, MA')
 print(client.get_service_list())
 ```
 
-Get recent service requests in a city:
+Get service requests in a city:
 ```
 from georeport import GeoReport
 
 client = GeoReport.from_city('Chicago, IL')
-print(client.get_service_list())
+print(client.get_service_requests())
 ```
 
 ## Supported Features
