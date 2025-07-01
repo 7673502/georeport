@@ -7,5 +7,22 @@ GeoReport is available on PyPI:
 pip install georeport
 ```
 
+## Example Usage
+Get the list of services in a city:
+```
+from georeport import GeoReport
+
+client = GeoReport.from_city('Brookline, MA')
+print(client.get_service_list())
+```
+
+Get recent service requests in a city:
+```
+from georeport import GeoReport
+
+client = GeoReport.from_city('Chicago, IL')
+print(client.get_service_list())
+```
+
 ## Supported Features
 GeoReport supports retrieval of requests in addition to service lists and definitions. However, GeoReport **does not** currently support the creation of new 311 service requests.

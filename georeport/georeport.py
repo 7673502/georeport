@@ -1,21 +1,37 @@
 import os
 import requests
 import xmltodict
-from typing import List, Dict
+from typing import List, Dict, Optional
+from .cityendpoint import CityEndpoints
 
 
 class GeoReport:
     def __init__(
         self,
         root_address: str,
-        jurisdiction: str = None,
-        api_key: str = None,
+        jurisdiction: Optional[str] = None,
+        api_key: Optional[str] = None,
         output_format: str = 'json'
     ) -> None:
         self.root_address = root_address.rstrip('/')
         self.jurisdiction = jurisdiction
         self.api_key = api_key or os.getenv('GEOREPORT_API_KEY')
         self.output_format = output_format
+
+    @classmethod
+    def from_city(
+        cls,
+        city_key: str,
+        api_key: Optional[str] = None,
+        output_format: str = 'json'
+    ) -> 'GeoReport':
+        city = CityEndpoints.get(city_key)
+        return cls(
+            city.root_address,
+            jurisdiction=city.jurisdiction,
+            api_key=api_key,
+            output_format=output_format
+        )
 
     def get_service_list(self) -> List[Dict]:
         params = {}
@@ -52,10 +68,10 @@ class GeoReport:
 
     def get_service_requests(
         self,
-        service_request_id: str = None,
-        start_date: str = None,
-        end_date: str = None,
-        status: str = None
+        service_request_id: Optional[str] = None,
+        start_date: Optional[str] = None,
+        end_date: Optional[str] = None,
+        status: Optional[str] = None
     ) -> List[Dict]:
         params = {}
         if service_request_id:
