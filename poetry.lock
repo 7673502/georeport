@@ -336,7 +336,19 @@ h2 = ["h2 (>=4,<5)"]
 socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
 
+[[package]]
+name = "xmltodict"
+version = "0.14.2"
+description = "Makes working with XML feel like you are working with JSON"
+optional = false
+python-versions = ">=3.6"
+groups = ["main"]
+files = [
+    {file = "xmltodict-0.14.2-py2.py3-none-any.whl", hash = "sha256:20cc7d723ed729276e808f26fb6b3599f786cbc37e06c65e192ba77c40f20aac"},
+    {file = "xmltodict-0.14.2.tar.gz", hash = "sha256:201e7c28bb210e374999d1dde6382923ab0ed1a8a5faeece48ab525b7810a553"},
+]
+
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.9"
-content-hash = "2810ec7ce72f9ef52d500e0cad0a989a21b3d2a92284f40478be88453616f4b0"
+content-hash = "f8bf53ca84fbf044e4bb94a3a1e6caaec90e1298ccb0f9b3a1b06c92e34dbca8"
