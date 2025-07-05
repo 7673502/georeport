@@ -8,7 +8,7 @@ from .cityendpoint import CityEndpoints
 class GeoReport:
     """
     Client that holds the necessary data to make API calls to a given
-        municipality's Open311 endpoint.
+    municipality's Open311 endpoint.
 
     Args:
         root_address (str): Base address of the API endpoint.
@@ -44,7 +44,7 @@ class GeoReport:
         self.jurisdiction = jurisdiction
         self.api_key = api_key or os.getenv('GEOREPORT_API_KEY')
         self.output_format = output_format.lower()
-        if self.output_format != 'json' or self.output_format != 'xml':
+        if self.output_format != 'json' and self.output_format != 'xml':
             raise ValueError("output_format must be either 'json' or 'xml'")
 
     @classmethod
@@ -82,8 +82,8 @@ class GeoReport:
     def get_service_list(self) -> List[Dict]:
         """
         Provide a list of acceptable 311 service request types and their
-            associated service codes. These request types can be unique to the
-            city/jurisdiction.
+        associated service codes. These request types can be unique to the
+        city/jurisdiction.
 
         Returns:
             List[Dict]: The services.
@@ -106,9 +106,9 @@ class GeoReport:
     def get_service_definition(self, service_code: str) -> Dict:
         """
         Provide attributes associated with a service code. These attributes
-            can be unique to the city/jurisdiction.  This call is only
-            necessary if the Service selected has metadata set as true from
-            the GET Services response
+        can be unique to the city/jurisdiction.  This call is only necessary
+        if the Service selected has metadata set as true from the GET Services
+        response.
 
         Args:
             service_code (str): The service code.
