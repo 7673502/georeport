@@ -1,6 +1,6 @@
 [project]
 name = "georeport"
-version = "0.2.1"
+version = "0.3.0"
 description = "Python wrapper for the Open311 GeoReport v2 API"
 authors = [
     {name = "Pramod Anandarao"}
