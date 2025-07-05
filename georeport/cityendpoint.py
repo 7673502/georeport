@@ -4,12 +4,18 @@ from typing import List, Dict, Optional
 
 @dataclass
 class CityEndpoint:
+    """
+    Stores the data for a city's endpoint.
+    """
     name: str
     root_address: str
     jurisdiction: Optional[str] = None
 
 
 class CityEndpoints:
+    """
+    Stores the data for known city endpoints.
+    """
     _cities: Dict[str, CityEndpoint] = {
         'Bloomington, IN': CityEndpoint(
             name='Bloomington, IN',
@@ -26,9 +32,24 @@ class CityEndpoints:
     }
 
     @classmethod
-    def list_city_keys(cls) -> List[str]:
+    def list_cities(cls) -> List[str]:
+        """
+        Get the cities with known endpoints.
+
+        Returns:
+            List[str]: The list of cities with known endpoints.
+        """
         return list(cls._cities.keys())
 
     @classmethod
-    def get(cls, city_key: str) -> CityEndpoint:
-        return cls._cities[city_key]
+    def get(cls, city: str) -> CityEndpoint:
+        """
+        Get the CityEndpoint object for a given city key.
+
+        Args:
+            city (str): The city's key.
+
+        Returns:
+            CityEndpoint: The CityEndpoint object for the given city key.
+        """
+        return cls._cities[city]
