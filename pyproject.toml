@@ -19,6 +19,13 @@ dependencies = [
 pytest = "^8.4.1"
 flake8 = "^7.3.0"
 
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx-rtd-theme = "^3.0.2"
+sphinx = "7.4.7"
+
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
