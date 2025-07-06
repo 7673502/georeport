@@ -1,5 +1,6 @@
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/georeport)](https://badge.fury.io/py/georeport)
 [![PyPI version](https://badge.fury.io/py/georeport.svg)](https://badge.fury.io/py/georeport)
+[![Read the Docs][https://readthedocs.org/projects/georeport/badge]](https://georeport.readthedocs.io/en/latest/)
 
 # GeoReport
 GeoReport is a thin Python wrapper for the Open311 GeoReport v2 API standard.
