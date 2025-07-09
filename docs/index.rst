@@ -6,21 +6,25 @@
 GeoReport documentation
 =======================
 
-.. image:: https://img.shields.io/pypi/pyversions/georeport
-    :target: https://badge.fury.io/py/georeport
-    :alt: PyPI - Python Version
+.. html::
+   <a href="https://badge.fury.io/py/georeport">
+      <img src="https://img.shields.io/pypi/pyversions/georeport" alt = "PyPI - Python Version">
+   </a>
 
-.. image:: https://badge.fury.io/py/georeport.svg
-    :target: https://badge.fury.io/py/georeport
-    :alt: PyPI version
+.. html::
+   <a href="https://badge.fury.io/py/georeport">
+      <img src="https://badge.fury.io/py/georeport.svg" alt = "PyPI version">
+   </a>
 
-.. image:: https://readthedocs.org/projects/georeport/badge
-    :target: https://georeport.readthedocs.io/en/latest/
-    :alt: Read the Docs
+.. html::
+   <a href="https://georeport.readthedocs.io/en/latest/">
+      <img src="https://readthedocs.org/projects/georeport/badge" alt = "Read the Docs">
+   </a>
 
-.. image:: https://static.pepy.tech/badge/georeport/month
-    :target: https://pepy.tech/project/georeport
-    :alt: Downloads
+.. html::
+   <a href="https://pepy.tech/project/georeport">
+      <img src="https://static.pepy.tech/badge/georeport/month" alt = "Downloads">
+   </a>
 
 .. toctree::
    :maxdepth: 1
