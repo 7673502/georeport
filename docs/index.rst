@@ -6,22 +6,22 @@
 GeoReport documentation
 =======================
 
-.. html::
+.. raw:: html
    <a href="https://badge.fury.io/py/georeport">
       <img src="https://img.shields.io/pypi/pyversions/georeport" alt = "PyPI - Python Version">
    </a>
 
-.. html::
+.. raw:: html
    <a href="https://badge.fury.io/py/georeport">
       <img src="https://badge.fury.io/py/georeport.svg" alt = "PyPI version">
    </a>
 
-.. html::
+.. raw:: html
    <a href="https://georeport.readthedocs.io/en/latest/">
       <img src="https://readthedocs.org/projects/georeport/badge" alt = "Read the Docs">
    </a>
 
-.. html::
+.. raw:: html
    <a href="https://pepy.tech/project/georeport">
       <img src="https://static.pepy.tech/badge/georeport/month" alt = "Downloads">
    </a>
