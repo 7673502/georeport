@@ -6,6 +6,22 @@
 GeoReport documentation
 =======================
 
+.. image:: https://img.shields.io/pypi/pyversions/georeport
+    :target: https://badge.fury.io/py/georeport
+    :alt: PyPI - Python Version
+
+.. image:: https://badge.fury.io/py/georeport.svg
+    :target: https://badge.fury.io/py/georeport
+    :alt: PyPI version
+
+.. image:: https://readthedocs.org/projects/georeport/badge
+    :target: https://georeport.readthedocs.io/en/latest/
+    :alt: Read the Docs
+
+.. image:: https://static.pepy.tech/badge/georeport/month
+    :target: https://pepy.tech/project/georeport
+    :alt: Downloads
+
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
