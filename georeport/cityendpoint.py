@@ -17,17 +17,25 @@ class CityEndpoints:
     Stores the data for known city endpoints.
     """
     _cities: Dict[str, CityEndpoint] = {
+        'Austin, TX': CityEndpoint(
+            name='Austin, TX',
+            root_address='https://austin2-production.spotmobile.net/open311/v2',
+        ),
         'Bloomington, IN': CityEndpoint(
             name='Bloomington, IN',
-            root_address='https://bloomington.in.gov/crm/open311/v2'
+            root_address='https://bloomington.in.gov/crm/open311/v2',
+        ),
+        'Boston, MA': CityEndpoint(
+            name='Boston, MA',
+            root_address='https://311.boston.gov/open311/v2',
         ),
         'Brookline, MA': CityEndpoint(
             name='Brookline, MA',
-            root_address='https://spot.brooklinema.gov/open311/v2'
+            root_address='https://spot.brooklinema.gov/open311/v2',
         ),
         'Chicago, IL': CityEndpoint(
             name='Chicago, IL',
-            root_address='http://311api.cityofchicago.org/open311/v2'
+            root_address='http://311api.cityofchicago.org/open311/v2',
         ),
     }
 
